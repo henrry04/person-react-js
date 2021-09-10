@@ -17,6 +17,11 @@ const Personas = () => {
 		  )
 	  }, [])
 
+      function formatDate(date){
+        var dateF = new Date(date);
+        return dateF.toLocaleString();
+      }
+
     return (
         <Fragment>
             <h4 className="text-center">Datos Almacenados</h4>
@@ -36,7 +41,7 @@ const Personas = () => {
                         <td>{key + 1}</td>
                         <td>{data.nombre}</td>
                         <td>{data.pais}</td>
-                        <td>{data.created}</td>
+                        <td>{formatDate(data.created)}</td>
                     </tr>
                 ))}
                 </tbody>
